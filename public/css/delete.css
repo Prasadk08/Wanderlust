@@ -1,0 +1,153 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1519.2px;
+}
+
+.container{
+    padding-top: 12px;
+    flex: 1;
+}
+.popup{
+    display: none;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .10);
+    border: 1px solid #e7eeec;
+    text-align: center;
+    position: relative;
+    background:transparent;
+    backdrop-filter: blur(6px);
+    color: white;
+    height: 119px;
+    width: 280px;
+    margin: 0px auto;
+    top: -285px ;
+    animation: popup;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+}
+@keyframes popup{
+    from{top: -460px;}
+    to{top:-285px}
+
+}
+.state{
+    margin: 20px;
+}
+.btn{
+    justify-content: space-evenly;
+    display: flex;
+}
+#btnyes{
+    background-color: #fe424d;
+    height: 30px;
+    width: 5rem;
+}
+#btnno{
+    background-color: #5FFBF1;
+    height: 30px;
+    width: 5rem;
+}
+.btn,.btnns{
+    display: flex !important;
+}
+#btne{
+    margin-right: 30px;
+}
+
+/* Navbar */
+.navbar{
+    font-size: 17px !important;
+    height: 4rem !important;
+    background-color: azure;
+}
+.navbar-brand{
+    font-weight: 800 !important;
+    color: #fe424d !important;
+}
+.nav-link{
+    color: black !important;
+}
+
+/* Footer */
+.f-info{
+    background-color: aliceblue;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding: 9px 0;
+}
+footer{
+    margin-bottom: 0;
+}
+.socials{
+    margin: 8px 0;
+}
+.socials i{
+    font-size: 17px;
+    margin-right: 12px;
+}
+.f-con a{
+    text-decoration: none;
+    color: #222222;
+}
+/* card */
+.listing-card{
+    /* border: none !important;         */
+    border-radius: 2rem !important;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .10) !important;
+    border: 1px solid #e7eeec !important;
+}
+.card-img-top{
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 2rem !important;
+}
+.card-title{
+    font-weight: 400 !important;
+}
+.title-decor{
+    text-decoration: none;
+    opacity: 1;
+}
+.title-decor:hover{
+    opacity: 0.7;
+    background-color: azure;
+}
+.btn-decor{
+    background-color: #fe424d !important;
+    color: white!important;
+    border: none!important;
+}
+/* Show */
+.show-img{
+    height: 30vh;
+    width: 80px;
+    object-fit: cover;
+}
+.show-card{
+    border: none !important;
+}
+/* Alert Animation */
+.myalert{
+    display: block;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-timing-function:ease-out;
+}
+.alertcolor{
+    background-color: #abff4f !important;
+}
+.alertcolo{
+    background-color: #ff5c8a !important;
+}
+
+@keyframes example {
+    0%   {top:-80px;}
+    25%  {top:0px;}
+    50%  {top:0px;}
+    100%  {top:-80px;}
+}

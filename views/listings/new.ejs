@@ -1,0 +1,46 @@
+<% layout('/layout/boilerplate') %>
+
+    
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>Creating New destination</h1>
+        <form method="POST" action="/listing/new" novalidate class="needs-validation" enctype="multipart/form-data">
+          <div class="mb-2">
+            <label for="title" class="form-label">Title </label>
+            <input type="text" name="listing[title]" class="form-control" placeholder="Add your Title" required>
+            <div class="invalid-feedback">Please enter a title</div>
+          </div>
+          <div class="mb-2">
+            <label for="description" class="form-label">Description </label>
+            <input type="text" name="listing[description]"class="form-control" placeholder="Destination" required>
+            <div class="invalid-feedback">Please enter a short Description</div>
+          </div>
+          <div class="mb-2">
+            <label for="url" class="form-label">URL </label>
+            <input type="file" name="listing[image]"class="form-control" placeholder="Image Url ">
+          </div>
+          <div class="row">
+              <div class="mb-2 col-md-4">
+                <label for="price" class="form-label">Price </label>
+                <input name="listing[price]"class="form-control" placeholder="Price" required>
+                <div class="invalid-feedback">Please enter a valid Price</div>
+              </div>
+              <div class="mb-2 col-md-8">
+                <label for="location" class="form-label">Location </label>
+                <input type="text" name="listing[location]"class="form-control" placeholder="Banglore" required>
+                <div class="invalid-feedback">Please enter a valid Location</div>
+              </div>
+          </div>
+          <div class="mb-2">
+            <label for="country" class="form-label">Country </label>
+            <input type="text" name="listing[country]"class="form-control" placeholder="India" required>
+            <div class="invalid-feedback">Please enter a valid country</div>
+          </div>
+          <br>
+          <button class="btn btn-primary btn-decor">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+
