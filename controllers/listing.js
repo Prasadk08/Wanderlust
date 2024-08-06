@@ -31,7 +31,7 @@ module.exports.showlisting = async(req,res)=>{
 }
 
 module.exports.newlisting= async(req,res,next)=>{
-
+    
     res.send(req.file)
     // let listingnew=req.body.listing
     // let data=new listing(listingnew)
