@@ -22,6 +22,7 @@ router.route("/:id/edit")
     .put(
         isLoggedIn,
         isOwner,
+        upload.single("listing[image]"),
         validateListing,
         wrapAsync(listingcontroller.updatelisting)
     )
@@ -31,8 +32,8 @@ router.route("/new")
     .get(isLoggedIn,listingcontroller.rendernewform)
     .post(
         isLoggedIn,
-        validateListing,
         upload.single("listing[image]"),
+        validateListing,
         wrapAsync(listingcontroller.newlisting)
     )
     // .post(upload.single('listing[url]'),(req,res)=>{

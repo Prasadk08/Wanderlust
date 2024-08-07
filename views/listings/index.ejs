@@ -11,7 +11,7 @@
             <% for(data of listingall){ %>
                 <a href="/listing/<%= data.id %>" class="title-decor">
                     <div class="card mb-3 listing-card">
-                        <img src="<%= data.url %>" class="card-img-top" style="height: 20rem;" alt="Destination Image">
+                        <img src="<%= data.image.url %>" class="card-img-top" style="height: 20rem;" alt="Destination Image">
                         <div class="card-body">
                           <p class="card-text">
                             <b><%= data.title %></b><br>

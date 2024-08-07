@@ -1,5 +1,6 @@
 
 const listing = require("../models/listing")
+const review = require("../models/review")
 
 
 module.exports.index = async (req,res)=>{
@@ -31,14 +32,15 @@ module.exports.showlisting = async(req,res)=>{
 }
 
 module.exports.newlisting= async(req,res,next)=>{
-    
-    res.send(req.file)
-    // let listingnew=req.body.listing
-    // let data=new listing(listingnew)
-    // data.owner=req.user._id;
-    // await data.save()
-    // req.flash("success","New Listing Created")
-    // res.redirect("/listing")
+    let url=req.file.path
+    let filename=req.file.filename
+    let listingnew=req.body.listing
+    let data=new listing(listingnew)
+    data.owner=req.user._id;
+    data.image={url,filename}
+    await data.save()
+    req.flash("success","New Listing Created")
+    res.redirect("/listing")
 }
 
 module.exports.rendereditform =async(req,res)=>{
@@ -57,6 +59,12 @@ module.exports.updatelisting=async(req,res)=>{
     const {id}=req.params
 
     await listing.findByIdAndUpdate(id,{...req.body.listing})
+    if(typeof req.file != "undefined"){
+        let url = req.file.path
+        let filename = req.file.filename
+        listing.image={url,filename}
+    }
+    await listing.save();
     req.flash("success","Listing Updated Succesfully")
     res.redirect("/listing")
 }

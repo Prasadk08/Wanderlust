@@ -14,12 +14,9 @@ const listingSchema = new mongoose.Schema({
     description:{
         type:String
     },
-    url:{
-        type:String,
-        // default:defaultImages[Math.floor(Math.random()*(2))],
-        set: (v) => v==="" || null
-        ? defaultImages[Math.floor(Math.random()*(3))]
-        :v,
+    image:{
+        url:String,
+        filename:String
     },
     price:{
         type:Number
