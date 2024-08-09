@@ -1,7 +1,8 @@
 <% layout('/layout/boilerplate') -%>
 <body>
   <div class="row">
-    <div class="col-6 offset-3">
+    <div class="col-5 editimg"><img src="<%= data.image.url %>" alt="" height="400px" width="500px"></div>
+    <div class="col-5">
       <form method="POST" action="/listing/<%= data.id %>/edit?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
         <h2>Edit Your Destination</h2>
           <div class="mb-3">

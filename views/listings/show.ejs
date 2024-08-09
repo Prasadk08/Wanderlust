@@ -1,4 +1,8 @@
 <% layout('/layout/boilerplate') %>
+<script>
+    const mapToken="<%= process.env.MAP_TOKEN %>"
+    const coordinates=<%- JSON.stringify(data.geometry.coordinates) %>
+</script>
 
 <body>
     <div class="row">
@@ -70,6 +74,7 @@
         </form>
         <% } %>
     </div>
+    <% if(data.review.length>0){  %> 
     <div class="reviews">
         <div class="row offset-1">
             <h3 class="mt-3 mb-3">Reviews</h3>
@@ -87,6 +92,12 @@
             <% } %>
         </div>
     </div>
+    <% } %>
+    <div class="col-6 offset-3 mb-3">
+        <h3>Where you'll be</h3>
+        <div id="map"></div>
 
+    </div>
     <script src="/js/delete.js"></script>
+    <script src="/js/map.js"></script>
 </body>

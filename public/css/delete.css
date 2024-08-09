@@ -151,3 +151,13 @@ footer{
     50%  {top:0px;}
     100%  {top:-80px;}
 }
+/* Edit Page */
+.editimg{
+    margin-top: 47px !important;
+}
+
+/* Map */
+#map{
+    height: 400px;
+    width: 80vh;
+}
