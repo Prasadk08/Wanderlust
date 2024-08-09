@@ -11,8 +11,6 @@ const {storage} = require('../cloudConfig.js')
 const upload = multer({ storage })
 
 
-router.get("/", wrapAsync(listingcontroller.index))
-
 router.route("/:id/edit")
     .get(
         isLoggedIn,

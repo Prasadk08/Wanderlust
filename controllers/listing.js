@@ -26,7 +26,7 @@ module.exports.showlisting = async(req,res)=>{
 
     if(!data){
         req.flash("error","Requested Listing does not Exist")
-        res.redirect("/listing")
+        res.redirect("/")
     }
     else{
         res.render("listings/show.ejs",{data})
@@ -50,7 +50,7 @@ module.exports.newlisting= async(req,res,next)=>{
     data.geometry=response.body.features[0].geometry;
     let test = await data.save()
     req.flash("success","New Listing Created")
-    res.redirect("/listing")
+    res.redirect("/")
 }
 
 module.exports.rendereditform =async(req,res)=>{
@@ -59,7 +59,7 @@ module.exports.rendereditform =async(req,res)=>{
 
     if(!data){
         req.flash("error","Requested Edit Listing does not Exist")
-        res.redirect("/listing")
+        res.redirect("/")
     }else{
         res.render("listings/edit.ejs",{data})
     }
@@ -77,7 +77,7 @@ module.exports.updatelisting=async(req,res)=>{
         await editlisting.save();
     }
     req.flash("success","Listing Updated Succesfully")
-    res.redirect("/listing")
+    res.redirect("/")
 }
 
 module.exports.destroylisting=async(req,res)=>{
@@ -85,5 +85,5 @@ module.exports.destroylisting=async(req,res)=>{
     await listing.findByIdAndDelete(id)
     await review.deleteMany({})
     req.flash("success","Listing Deleted Succesfully")
-    res.redirect("/listing")
+    res.redirect("/")
 }

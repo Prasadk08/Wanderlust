@@ -14,7 +14,7 @@ module.exports.succsssSignUP = async(req,res)=>{
                 return next(err)
             }else{
                 req.flash("success","Welcome to WanderLust")
-                res.redirect("/listing")
+                res.redirect("/")
             }
         })
     }catch(e){
@@ -42,5 +42,4 @@ module.exports.userLogout=(req,res,next)=>{
             res.redirect("/login")
         }
     })
-    
 }
