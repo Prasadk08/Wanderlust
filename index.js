@@ -15,6 +15,8 @@ const passport = require('passport')
 const localStrategy = require('passport-local')
 const User = require('./models/user.js')
 const expressError = require('./utils/expressError.js')
+const wrapAsync = require('./utils/wrapAsync.js')
+const listing = require("./models/listing")
 
 
 const listingRoute = require('./router/listing.js')
@@ -96,7 +98,11 @@ app.use("/listing",listingRoute)
 app.use("/listing/:id/review",reviewRoute)
 app.use("/",userRoute)
 
-app.get("/", wrapAsync(listingcontroller.index))
+app.get("/", wrapAsync(async (req,res)=>{
+    const listingall = await listing.find({})
+    res.render("listings/index.ejs",{listingall})
+}))
+
 
 app.all("*",(req,res,next)=>{
     next(new expressError(404,"Page Not Found!"))

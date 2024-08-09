@@ -5,10 +5,7 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const maptoken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: maptoken });
 
-module.exports.index = async (req,res)=>{
-    const listingall = await listing.find({})
-    res.render("listings/index.ejs",{listingall})
-}
+
 
 module.exports.rendernewform =  (req,res)=>{
     res.render("listings/new.ejs")
